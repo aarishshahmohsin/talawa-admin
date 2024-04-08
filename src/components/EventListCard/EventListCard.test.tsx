@@ -22,6 +22,7 @@ import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from 'state/store';
 import { toast } from 'react-toastify';
+import type { Time } from 'utils/types';
 
 const MOCKS = [
   {
@@ -121,8 +122,8 @@ const props: InterfaceEventListCardProps[] = [
     eventDescription: '',
     regDate: '',
     regEndDate: '',
-    startTime: '',
-    endTime: '',
+    startTime: undefined,
+    endTime: undefined,
     allDay: false,
     recurring: false,
     isPublic: false,
@@ -136,8 +137,8 @@ const props: InterfaceEventListCardProps[] = [
     eventDescription: 'This is shelter for dogs event',
     regDate: '19/03/2022',
     regEndDate: '26/03/2022',
-    startTime: '02:00',
-    endTime: '06:00',
+    startTime: '02:00:00' as Time,
+    endTime: '06:00:00' as Time,
     allDay: true,
     recurring: false,
     isPublic: true,
@@ -151,8 +152,8 @@ const props: InterfaceEventListCardProps[] = [
     eventDescription: 'This is shelter for cat event',
     regDate: '19/03/2022',
     regEndDate: '26/03/2022',
-    startTime: '2:00',
-    endTime: '6:00',
+    startTime: '02:00:00' as Time,
+    endTime: '06:00:00' as Time,
     allDay: false,
     recurring: true,
     isPublic: true,
@@ -220,8 +221,8 @@ describe('Testing Event List Card', () => {
               eventDescription=""
               regDate="19/03/2022"
               regEndDate="26/03/2022"
-              startTime="02:00"
-              endTime="06:00"
+              startTime="02:00:00"
+              endTime="06:00:00"
               allDay={true}
               recurring={false}
               isPublic={true}

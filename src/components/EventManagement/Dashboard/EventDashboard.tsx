@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { EVENT_DETAILS } from 'GraphQl/Queries/Queries';
 import { useQuery } from '@apollo/client';
 import Loader from 'components/Loader/Loader';
+import type { Time } from 'utils/types';
 
 const EventDashboard = (props: { eventId: string }): JSX.Element => {
   const { eventId } = props;
@@ -23,7 +24,7 @@ const EventDashboard = (props: { eventId: string }): JSX.Element => {
     return <Loader />;
   }
 
-  function formatTime(timeString: string): string {
+  function formatTime(timeString: Time): string {
     const [hours, minutes] = timeString.split(':').slice(0, 2);
     return `${hours}:${minutes}`;
   }

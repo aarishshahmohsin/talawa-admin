@@ -1,3 +1,5 @@
+import type { Time } from 'utils/types';
+
 export interface InterfaceUserType {
   user: {
     firstName: string;
@@ -248,8 +250,8 @@ export interface InterfaceQueryOrganizationEventListItem {
   startDate: string;
   endDate: string;
   location: string;
-  startTime: string;
-  endTime: string;
+  startTime: Time;
+  endTime: Time;
   allDay: boolean;
   recurring: boolean;
   isPublic: boolean;

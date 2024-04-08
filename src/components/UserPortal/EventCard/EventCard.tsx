@@ -11,6 +11,7 @@ import { REGISTER_EVENT } from 'GraphQl/Mutations/mutations';
 import { useTranslation } from 'react-i18next';
 
 import useLocalStorage from 'utils/useLocalstorage';
+import type { Time } from 'utils/types';
 
 interface InterfaceEventCardProps {
   id: string;
@@ -21,8 +22,8 @@ interface InterfaceEventCardProps {
   endDate: string;
   isRegisterable: boolean;
   isPublic: boolean;
-  endTime: string;
-  startTime: string;
+  endTime: Time | undefined;
+  startTime: Time | undefined;
   recurring: boolean;
   allDay: boolean;
   creator: {
@@ -62,7 +63,7 @@ function eventCard(props: InterfaceEventCardProps): JSX.Element {
           setIsRegistered(true);
           toast.success(`Successfully registered for ${props.title}`);
         }
-      } catch (error: any) {
+      } catch (error) {
         /* istanbul ignore next */
         toast.error(error);
       }

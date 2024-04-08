@@ -23,6 +23,7 @@ import { ThemeProvider } from 'react-bootstrap';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { MOCKS } from '../../screens/OrganizationEvents/OrganizationEventsMocks';
+import type { Time } from 'utils/types';
 
 const theme = createTheme({
   palette: {
@@ -71,8 +72,8 @@ describe('Testing the creaction of recurring events with custom recurrence patte
     startDate: '03/28/2022',
     endDate: '04/15/2023',
     location: 'New Delhi',
-    startTime: '09:00 AM',
-    endTime: '05:00 PM',
+    startTime: '09:00:00' as Time,
+    endTime: '17:00:00' as Time,
   };
 
   test('Changing the recurrence frequency', async () => {

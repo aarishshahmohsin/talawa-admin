@@ -8,6 +8,7 @@ import CurrentHourIndicator from 'components/CurrentHourIndicator/CurrentHourInd
 import { ViewType } from 'screens/OrganizationEvents/OrganizationEvents';
 import HolidayCard from '../HolidayCards/HolidayCard';
 import { holidays, hours, months, weekdays } from './constants';
+import type { Time } from 'utils/types';
 
 interface InterfaceEvent {
   _id: string;
@@ -16,8 +17,8 @@ interface InterfaceEvent {
   startDate: string;
   endDate: string;
   location: string;
-  startTime: string | undefined;
-  endTime: string | undefined;
+  startTime: Time | undefined;
+  endTime: Time | undefined;
   allDay: boolean;
   recurring: boolean;
   registrants?: InterfaceIEventAttendees[];

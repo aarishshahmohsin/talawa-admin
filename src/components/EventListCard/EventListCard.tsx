@@ -18,6 +18,7 @@ import {
   RecurringEventMutationType,
   recurringEventMutationOptions,
 } from 'utils/recurrenceUtils';
+import type { Time } from 'utils/types';
 
 export interface InterfaceEventListCardProps {
   key: string;
@@ -27,8 +28,8 @@ export interface InterfaceEventListCardProps {
   eventDescription: string;
   regDate: string;
   regEndDate: string;
-  startTime: string | undefined;
-  endTime: string | undefined;
+  startTime: Time | undefined;
+  endTime: Time | undefined;
   allDay: boolean;
   recurring: boolean;
   isPublic: boolean;

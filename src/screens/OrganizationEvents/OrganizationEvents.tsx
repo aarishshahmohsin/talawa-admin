@@ -29,6 +29,7 @@ import {
 } from 'utils/recurrenceUtils';
 import type { InterfaceRecurrenceRule } from 'utils/recurrenceUtils';
 import RecurrenceOptions from 'components/RecurrenceOptions/RecurrenceOptions';
+import type { Time } from 'utils/types';
 
 const timeToDayJs = (time: string): Dayjs => {
   const dateTimeString = dayjs().format('YYYY-MM-DD') + ' ' + time;
@@ -74,8 +75,8 @@ function organizationEvents(): JSX.Element {
     eventdescrip: '',
     date: '',
     location: '',
-    startTime: '08:00:00',
-    endTime: '18:00:00',
+    startTime: '08:00:00' as Time,
+    endTime: '18:00:00' as Time,
   });
   const { orgId: currentUrl } = useParams();
   const navigate = useNavigate();
@@ -361,13 +362,13 @@ function organizationEvents(): JSX.Element {
                     if (time) {
                       setFormState({
                         ...formState,
-                        startTime: time?.format('HH:mm:ss'),
+                        startTime: time?.format('HH:mm:ss') as Time,
                         endTime:
                           /*istanbul ignore next*/
                           timeToDayJs(formState.endTime) < time
-                            ? /* istanbul ignore next */ time?.format(
+                            ? /* istanbul ignore next */ (time?.format(
                                 'HH:mm:ss',
-                              )
+                              ) as Time)
                             : formState.endTime,
                       });
                     }
@@ -386,7 +387,7 @@ function organizationEvents(): JSX.Element {
                     if (time) {
                       setFormState({
                         ...formState,
-                        endTime: time?.format('HH:mm:ss'),
+                        endTime: time?.format('HH:mm:ss') as Time,
                       });
                     }
                   }}

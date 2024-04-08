@@ -13,6 +13,7 @@ import { store } from 'state/store';
 import i18nForTest from 'utils/i18nForTest';
 import { StaticMockLink } from 'utils/StaticMockLink';
 import OrganizationSidebar from './OrganizationSidebar';
+import type { Time } from 'utils/types';
 
 const MOCKS = [
   {
@@ -34,8 +35,8 @@ const MOCKS = [
             startDate: '',
             endDate: '',
             location: 'New Delhi',
-            startTime: '02:00',
-            endTime: '06:00',
+            startTime: '02:00:00' as Time,
+            endTime: '06:00:00' as Time,
             allDay: false,
             recurring: false,
             isPublic: true,

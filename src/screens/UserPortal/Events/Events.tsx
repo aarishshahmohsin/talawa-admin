@@ -26,6 +26,7 @@ import EventCalendar from 'components/EventCalendar/EventCalendar';
 import useLocalStorage from 'utils/useLocalstorage';
 import { useParams } from 'react-router-dom';
 import { ViewType } from 'screens/OrganizationEvents/OrganizationEvents';
+import type { Time } from 'utils/types';
 
 interface InterfaceEventCardProps {
   id: string;
@@ -36,8 +37,8 @@ interface InterfaceEventCardProps {
   endDate: string;
   isRegisterable: boolean;
   isPublic: boolean;
-  endTime: string;
-  startTime: string;
+  endTime: Time;
+  startTime: Time;
   recurring: boolean;
   allDay: boolean;
   creator: {
@@ -59,8 +60,8 @@ interface InterfaceAttendee {
   endDate: string;
   isRegisterable: boolean;
   isPublic: boolean;
-  endTime: string;
-  startTime: string;
+  endTime: Time;
+  startTime: Time;
   recurring: boolean;
   allDay: boolean;
   attendees: { _id: string }[];

@@ -13,6 +13,7 @@ import { StaticMockLink } from 'utils/StaticMockLink';
 import userEvent from '@testing-library/user-event';
 import { debug } from 'jest-preview';
 import useLocalStorage from 'utils/useLocalstorage';
+import type { Time } from 'utils/types';
 
 const { setItem } = useLocalStorage();
 
@@ -50,8 +51,8 @@ describe('Testing Event Card In User portal', () => {
     endDate: '2023-04-15',
     isRegisterable: true,
     isPublic: true,
-    endTime: '19:49:12',
-    startTime: '17:49:12',
+    endTime: '19:49:12' as Time,
+    startTime: '17:49:12' as Time,
     recurring: false,
     allDay: true,
     creator: {
@@ -157,8 +158,8 @@ describe('Event card when start and end time are not given', () => {
     endDate: '2023-04-15',
     isRegisterable: true,
     isPublic: true,
-    endTime: '',
-    startTime: '',
+    endTime: undefined,
+    startTime: undefined,
     recurring: false,
     allDay: true,
     creator: {

@@ -1,4 +1,5 @@
 import { EVENT_DETAILS } from 'GraphQl/Queries/Queries';
+import type { Time } from 'utils/types';
 
 // Mock 1
 export const MOCKS_WITH_TIME = [
@@ -17,8 +18,8 @@ export const MOCKS_WITH_TIME = [
           description: 'Event Description',
           startDate: '1/1/23',
           endDate: '16/2/23',
-          startTime: '08:00:00',
-          endTime: '09:00:00',
+          startTime: '08:00:00' as Time,
+          endTime: '09:00:00' as Time,
           allDay: false,
           location: 'India',
           organization: {
